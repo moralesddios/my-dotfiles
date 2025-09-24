@@ -1,0 +1,37 @@
+# .zshrc!
+
+export EDITOR=nvim
+
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+
+source $HOME/.local/share/coursier/bin
+source $HOME/.asdf/plugins/java/set-java-home.zsh
+source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Alias
+alias vim=nvim
+alias k=kubectl
+alias ctx=kubectx
+alias ns=kubens
+alias cs=coursier
+alias dhall=dhall-to-json
+alias ff='fastfetch --config examples/13'
+alias upd='sudo dnf upgrade --refresh -y'
+
+alias la='ls -la'
+
+alias bk='cd -'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
+alias gst='git status'
+alias gcm='git commit -m'
+alias gca='git commit --amend'
+alias gco='git checkout'
+
+eval "$(starship init zsh)"
+eval "$(direnv hook zsh)"
+
+set -o AUTO_CD
